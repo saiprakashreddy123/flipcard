@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Flip Card</title>
+    <style>
+        *,
+        *::before,
+        *::after 
+        * {
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.4;
+        }
+        body {
+            background: linear-gradient(90deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+            color: rgb(223, 218, 213);
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            min-height: 100%; 
+            margin: 100px;
+        }
+        .cardcontainer {
+            perspective: 1000px; 
+            width: 350px;
+            height: 250px;
+
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d; 
+            transition: transform 0.7s ease-in-out; 
+        }
+        .cardcontainer:hover .card {
+            transform: rotateY(180deg);
+            background-color: rgb(193, 226, 202);
+            border-radius: 200px;
+    
+        }
+
+        .frontcard,
+        .backcard {
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden; 
+            border-radius: 15px;
+            overflow: hidden; 
+            position: absolute; 
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+            text-align: center;
+            padding: 20px;
+
+
+        }
+        .frontcard {
+            background: #020024;
+            background: linear-gradient(90deg, rgba(2, 0, 36, 0.57) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 0.65) 100%);
+            color: rgb(243, 244, 242);  
+
+        }
+        .frontcard img {
+        
+            height: 100%;
+            width: 360px;
+            display: block;
+            border-radius: 15px;
+           
+        }
+        .backcard {
+           background: #020024;
+        background: linear-gradient(90deg, rgba(2, 0, 36, 0.57) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 0.65) 100%);
+            color: white; 
+            transform: rotateY(180deg); 
+            
+        }
+        .backcard_content header p {
+            margin-bottom: 0.2px;
+          
+            
+        }
+        .backcard_content .title {
+            font-size: 105%;
+            margin-bottom: 10px;
+        }
+        .backcard_content .Description {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .backcard_content .btn {
+            background-color: #337ab7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 80%;
+            transition: background-color 0.6s ease-in-out;
+        }
+        .backcard_content .btn:hover {
+            background-color: #db1b1b;
+        }
+    </style>
+</head>
+<body>
+    <div class="cardcontainer">
+        <div class="card">
+            <div class="frontcard">
+                <img src="dhoni.jpg" alt="Tap Academy Logo">
+            </div>
+            <div class="backcard">
+                <div class="backcard_content">
+                    <header><p>Mahendra Singh Dhoni</p></header>
+                    <h2 class="title">Personal details</h2>
+                    <p class="Description">Born	7 July 1981 (age 43) <br>
+Ranchi, Bihar (present-day Jharkhand), India
+Height	5 ft 9 in (175 cm)[1] <br>
+Awards	
+ Padma Bhushan (2018)
+ Padma Shri (2009)
+Major Dhyan Chand Khel Ratna Award (2008)
+Nickname(s)	Mahi, Thala, Captain Cool[2</p>
+                    <a href="https://en.wikipedia.org/wiki/MS_Dhoni"><button class="btn">Learn More</button></a>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
